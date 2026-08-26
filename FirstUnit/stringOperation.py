@@ -19,3 +19,9 @@ print(str1+str(num)+str2)
 print("我今年%s岁"%num)
 #方式二
 print(f"我今年{num}岁")
+
+#字符串索引
+print(s1[0])
+#字符串切片
+print(s1[1:3])
+#字符串不可变，不能修改字符串中的元素
