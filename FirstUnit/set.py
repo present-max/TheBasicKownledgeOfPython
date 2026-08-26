@@ -16,4 +16,5 @@ print(set3.intersection(set4))
 print(set3.union(set4))
 #集合推导式
 set5={i for i in range(1,11)}
+#不可切片
 
