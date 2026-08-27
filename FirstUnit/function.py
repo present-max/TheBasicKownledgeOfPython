@@ -1,5 +1,3 @@
-#指定模块的导出内容
-__all__ = ["stu","caculate","cube","function"]
 #默认参数要放在最后
 def stu(name,score,gender,age=19):
     #函数的说明文档
@@ -32,12 +30,6 @@ num=3
 def function(cube,num):
     return cube(num)
 print(function(cube,num))
-
-#如果该模块是被导入的，则不执行，如果该模块是被直接运行的，则执行
-if __name__ == '__main__':
-    stu("zhangsan",90,"male")
-    minnum,maxnum,avgnum=caculate(1,2,3,4,5,6,7,8,9,10,round=2)
-    print(minnum,maxnum,avgnum)
 
 
 
