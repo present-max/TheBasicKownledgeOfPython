@@ -18,3 +18,4 @@ print(set3.union(set4))
 set5={i for i in range(1,11)}
 #不可切片
 
+
