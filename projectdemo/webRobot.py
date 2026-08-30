@@ -16,9 +16,9 @@ def get_movie_detail(url):
     document =html.fromstring(response.text)
     movie_names=document.xpath('//*[@id="original_header"]/div[2]/section/div[1]/h2/a/text()')#电影名
     movie_years=document.xpath('//*[@id="original_header"]/div[2]/section/div[1]/h2/span/text()')#年份
-    movie_times=document.xpath('//*[@id="original_header"]/div[2]/section/div[1]/div/span[2]/text()')#上映时间
-    movie_type=document.xpath('//*[@id="original_header"]/div[2]/section/div[1]/div/span[3]/a/text()')#类型
-    movie_cost_times=document.xpath('//*[@id="original_header"]/div[2]/section/div[1]/div/span[4]/text()')#时长
+    movie_times=document.xpath('//*[@id="original_header"]/div[2]/section/div[1]/div/span[@class="release"]/text()')#上映时间
+    movie_type=document.xpath('//*[@id="original_header"]/div[2]/section/div[1]/div/span[@class="genres"]/a/text()')#类型
+    movie_cost_times=document.xpath('//*[@id="original_header"]/div[2]/section/div[1]/div/span[@class="runtime"]/text()')#时长
     movie_score=document.xpath('//*[@id="consensus_pill"]/div/div[1]/div/div/@data-percent')#评分
     movie_languages=document.xpath('//*[@id="media_v4"]/div/div/div[2]/div/section/div[1]/div/section[1]/p[3]/text()')#语言
     movie_directors=document.xpath('//*[@id="original_header"]/div[2]/section/div[3]/ol/li[2]/p[1]/a/text()')#导演
@@ -46,9 +46,7 @@ def get_movie_detail(url):
 #获取电影年份
 def get_movie_year(movie_years):
     movie_year=movie_years[0].strip() if movie_years else ""
-    movie_year.replace("(","")
-    movie_year.replace(")","")
-    return movie_year
+    return movie_year.replace("(","").replace(")","")
 
 #获取电影上映时间
 def get_movie_publish(movie_times):
